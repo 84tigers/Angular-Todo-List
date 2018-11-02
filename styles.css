@@ -1,5 +1,5 @@
 body {
-    background-color: #ff1493;
+    background-image: linear-gradient(to right, #f857a6, #ff5858);
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
 }
@@ -15,6 +15,10 @@ section {
     box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
 }
 
+ol {
+    padding-left: 2em;
+}
+
 li {
     width: 100%;
 }
@@ -24,7 +28,7 @@ li {
 }
 
 .p-task {
-    font-size: 1em;
+    font-size: 0.8em;
 }
 
 h1 {
@@ -39,7 +43,7 @@ p {
 
 #cmplt-btn {
     /* border-style: none; */
-    border: 1px solid #ff69b4;
+    border: 1px solid #ff1493;
     background-color: #fff;
     border-radius: 7px;
     font-size: 0.6em;
@@ -56,14 +60,32 @@ p {
     color: white;
     height: 2.3em;
     margin-top: 1em;
+    margin-bottom: 1em;
 }
 
+#add-btn:hover {
+    background-color:#ff1493;
+}
+
+#x-btn {
+    float: right;
+    border: none;
+    background-color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+
+}
+
+input::placeholder {
+    color: #bbb;
+  }
+
 input {
-    width: 100%;
+    width: 97%;
     border: 1px solid #bbb;
     border-radius: 5px;
-    color: #bbb;
-    
-    font-size: 0.8em;
+    /* color: #bbb; */
+    padding-left: 0.75em;
+    font-size: 0.75em;
     height: 2em;
 }

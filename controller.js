@@ -1,12 +1,12 @@
 "use strict";
 function TodoController() {
     const vm = this;
-    vm.todos = [];
+    vm.todos = ["Feed the Apatosaurus", "Clean the Stegasaurus litter", "Prove the existence of Brontosaurus", "Lock T-rex gate"];
     vm.addTodo = (newTodo) => {
         console.log(newTodo);
         vm.todos.push({
             task: newTodo.task,
-            complet: newTodo.complete
+            complete: newTodo.complete
         });
         vm.todos.push(angular.copy(newTodo));
         

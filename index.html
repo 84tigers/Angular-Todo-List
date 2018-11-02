@@ -29,7 +29,7 @@
                 </p><button id="cmplt-btn" class="b-task" ng-class="{
                     'hide': todo.complete === true
                 }">Complete</button>
-                <p class="p-task">{{ todo.task }}</p>
+                <p class="p-task">{{ todo }}</p>
                 <button id="x-btn" class="b-task" ng-click="$ctrl.removeTask($index);">X</button>
             </li>
         </ol>
