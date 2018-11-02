@@ -1,28 +1,39 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="App">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>AngularJS</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AngularJS</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-  <section>
-    <form action="">
-      <h1>TODO List</h1>
-      <p>A place to store te things you have to do!</p>
-      <input type="text" placeholder="Filter your to-dos">
-      <ol>
 
-      </ol>
-      <input type="text" placeholder="Add your to do">
-      <button>Add</button>
-    </form>
-  </section>
+    <section ng-controller="TodoController as $ctrl">
 
-  <script src="https://code.angularjs.org/1.6.5/angular.js"></script>
-  <script src="app/module/module.js"></script>
-  <script src="app/controllers/controller.js"></script>
+
+
+        <h1>TODO List</h1>
+        <p>A place to store te things you have to do!</p>
+
+        <!-- <input type="text" placeholder="Filter your to-dos" ng-model="$ctrl.filterList"> -->
+
+        <div ng-repeat="todo in $ctrl.todos">
+            <p>{{ todo.task }}{{ $index }}</p><button>complete</button>
+            <p></p><button>X</button>
+        </div>
+
+        <form ng-submit="$ctrl.addTodo($ctrl.todos)">
+            <input type="text" placeholder="Add your to do" ng-model="$ctrl.todos.task">
+            <button>Add</button>
+        </form>
+    </section>
+
+    <script src="https://code.angularjs.org/1.6.5/angular.js"></script>
+    <script src="module.js"></script>
+    <script src="controller.js"></script>
 </body>
+
 </html>
