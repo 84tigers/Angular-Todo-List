@@ -19,15 +19,30 @@
         <h1>TODO List</h1>
         <p>A place to store the things you have to do!</p>
 
-        <input type="text" placeholder="Filter your to-dos" ng-model="$ctrl.filterList">
 
-        <!-- needs if statement for index w/ undefined task -->
-        <div ng-repeat="todo in $ctrl.todos">
+        <!-- redo with $scope -->
+        <form ng-submit="$ctrl.addTodo($ctrl.todos)">
+            <input type="text" placeholder="Filter your to-dos" ng-model="$ctrl.filterList">
+        </form>
+        <ol>
+            <li ng-repeat="todo in $ctrl.todos | filter: filterList track by $index">
+                </p><button id="cmplt-btn" class="b-task" ng-class="{
+                    'hide': todo.complete === true
+                }">Complete</button>
+                <p class="p-task">{{ todo.task }}</p>
+                <button id="x-btn" class="b-task" ng-click="$ctrl.removeTask($index);">X</button>
+            </li>
+        </ol>
+
+        <!-- needs if statement for index w/ undefined task ??? -->
+        <!-- testing without using list -->
+
+        <!-- <div ng-repeat="todo in $ctrl.todos">
             <p class="p-task">{{ $index }}.</p><button id="cmplt-btn"class="b-task" ng-class="{
                 'hide': todo.complete === true
             }">Complete</button><p class="p-task">{{ todo.task }}</p>
             <button id="x-btn" class="b-task">X</button>
-        </div>
+        </div> -->
 
         <form ng-submit="$ctrl.addTodo($ctrl.todos)">
             <input type="text" placeholder="Add your to do" ng-model="$ctrl.todos.task">

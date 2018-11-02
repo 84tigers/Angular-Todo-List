@@ -11,7 +11,9 @@ function TodoController() {
         vm.todos.push(angular.copy(newTodo));
         
     };
-
+    vm.removeTask = (index) => {
+        vm.todos.splice(index, 1);
+    };
 }
 angular
     .module("App")
