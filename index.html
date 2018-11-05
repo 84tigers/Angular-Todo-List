@@ -26,10 +26,8 @@
         </form>
         <ol>
             <li ng-repeat="todo in $ctrl.todos | filter: $ctrl.filterList track by $index" >
-                </p><button id="cmplt-btn" class="b-task" ng-class="{'hide': todo.complete === true}">Complete</button>
-                <p class="p-task" ng-class="{
-                    'completed': todo.complete === true, 'hide': todo.task === undefined   
-                }">{{ todo.task }}</p>
+                </p><button id="cmplt-btn" class="b-task" ng-if="!todo.complete">Complete</button>
+                <p class="p-task" ng-class="{'completed': todo.complete === true}" ng-if="todo.task">{{ todo.task }}</p>
                 <button id="x-btn" class="b-task" ng-click="$ctrl.removeTask($index);">X</button>
             </li>
         </ol>
