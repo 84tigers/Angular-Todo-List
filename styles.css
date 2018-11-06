@@ -11,7 +11,7 @@ section {
     transform: translatex(-50%);
     background-color: #fff;
     padding: 1em;
-    margin-top: 5em;
+    margin: 2.5em 0;
     border-radius: 5px;
     box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
 }
@@ -22,6 +22,7 @@ ol {
 
 li {
     width: 100%;
+    border-radius: 7px;
 }
 
 .p-task, .b-task {
@@ -31,6 +32,11 @@ li {
 .p-task {
     font-size: 0.8em;
     margin-left: 0.6em;
+    margin-bottom: 0;
+}
+
+li:hover{
+    background-color: #eee;
 }
 
 h1 {
@@ -48,11 +54,10 @@ p {
     background-color: #fff;
     border-radius: 7px;
     font-size: 0.6em;
-    padding: 0.4em;
+    padding: 0.7em;
     color: #ff69b4;
     margin-left: 0.6em;
     cursor: pointer;
-    
 }
 
 #add-btn {
@@ -65,7 +70,6 @@ p {
     margin-top: 1em;
     margin-bottom: 1em;
     cursor: pointer;
-
 }
 
 #add-btn:hover {
@@ -77,14 +81,19 @@ p {
     height: 18px;
     float: right;
     border: none;
-    background-image: url("images/outline_clear_black_18dp.png");
-    background-size: 100%;
-    background-color: white;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 400;
+    background: none;
     cursor: pointer;
+    margin-right: 2em;
 }
 
+.material-icons {
+    width: 18px;
+    height: 18px;
+}
+
+.material-icons:hover {
+    color: red;
+}
 input::placeholder {
     color: #bbb;
   }
@@ -93,7 +102,6 @@ input {
     width: 97%;
     border: 1px solid #bbb;
     border-radius: 5px;
-    /* color: #bbb; */
     padding-left: 0.75em;
     font-size: 0.75em;
     height: 2em;

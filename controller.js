@@ -13,18 +13,22 @@ function TodoController() {
     }, {
         task: "Lock T-rex gate", 
         compplete: false
-    }];
+    },];
+
     vm.addTodo = (newTodo) => {
         console.log(newTodo);
         vm.todos.push({
             task: newTodo.task,
             complete: newTodo.complete
         });
-        vm.todos.push(angular.copy(newTodo));
-        
     };
+
     vm.removeTask = (index) => {
         vm.todos.splice(index, 1);
+    };
+    
+    vm.completeTask = (todo) => {
+        todo.complete = true;
     };
 }
 angular
